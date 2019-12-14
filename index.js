@@ -1,3 +1,19 @@
+const express = require('express')
+
+const server = express()
+const PORT = procces.env.PORT || 4000
+
+
+server.use(express.json())
+
+server.listen(PORT, () => {
+    console.log(`The server is running on PORT: ${PORT}`)
+})
+
+
+
+
+
 /*
 play this: https://www.youtube.com/watch?v=d-diB65scQU
 
