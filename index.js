@@ -1,10 +1,13 @@
 const express = require('express')
+const helmet = require('helmet')
+const morgan = require('morgan')
 
 const server = express()
-const PORT = procces.env.PORT || 4000
+const PORT = 4000
 
-
+server.use(helmet)
 server.use(express.json())
+server.use(morgan)
 
 server.listen(PORT, () => {
     console.log(`The server is running on PORT: ${PORT}`)
