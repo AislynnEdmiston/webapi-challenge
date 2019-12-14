@@ -12,7 +12,7 @@ async function getAllProjects(req, res){
 
 async function getProjectById(req, res){
     try {
-        const project = await projectModel.get(id)
+        const project = await projectModel.get(req.params.id)
         res.json(project[0])
     } catch (error) {
         res.status(500).json(error)
