@@ -1,3 +1,26 @@
+const express = require('express')
+const helmet = require('helmet')
+const morgan = require('morgan')
+
+const project = require('./routes/project')
+
+const server = express()
+const PORT = 4000
+
+server.use(helmet())
+server.use(express.json())
+server.use(morgan())
+
+server.use(project)
+
+server.listen(PORT, () => {
+    console.log(`The server is running on PORT: ${PORT}`)
+})
+
+
+
+
+
 /*
 play this: https://www.youtube.com/watch?v=d-diB65scQU
 
